@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder for a portrait of Rashmi Thakur">
+  <defs>
+    <linearGradient id="studio" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4A4036"/>
+      <stop offset="38%" stop-color="#211E1A"/>
+      <stop offset="100%" stop-color="#0C0B0A"/>
+    </linearGradient>
+    <radialGradient id="key" cx="72%" cy="26%" r="58%">
+      <stop offset="0%" stop-color="#E4D6BE" stop-opacity="0.42"/>
+      <stop offset="38%" stop-color="#A89070" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#0C0B0A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="fill" cx="28%" cy="78%" r="50%">
+      <stop offset="0%" stop-color="#3A322A" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#0C0B0A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="1600" fill="url(#studio)"/>
+  <rect width="1200" height="1600" fill="url(#key)"/>
+  <rect width="1200" height="1600" fill="url(#fill)"/>
+  <text x="600" y="1536" text-anchor="middle" fill="#C4B28A" fill-opacity="0.75" font-family="Helvetica, Arial, sans-serif" font-size="12" letter-spacing="0.42em">PORTRAIT TO BE ADDED</text>
+</svg>
