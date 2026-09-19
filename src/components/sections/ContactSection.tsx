@@ -89,7 +89,7 @@ export function ContactSection({
           />
         ) : null}
         <div className={showHeading ? 'mt-10 flex flex-wrap gap-3' : 'flex flex-wrap gap-3'}>
-          <Button href="#contact-form" variant="solid">
+          <Button href="#contact-form" variant="outline">
             Start a conversation
           </Button>
           {whatsappHref ? (
