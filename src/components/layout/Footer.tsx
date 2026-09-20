@@ -13,20 +13,20 @@ export function Footer() {
   return (
     <footer className="site-footer bg-charcoal font-sans text-ivory">
       <div className="mx-auto max-w-page px-5 pt-20 pb-12 sm:px-8 lg:px-12 lg:pt-28">
-        <p className="font-display whitespace-nowrap text-5xl leading-none tracking-[-0.02em] text-ivory sm:text-6xl lg:text-7xl">
+        <p className="font-display whitespace-nowrap text-3xl leading-none tracking-[-0.02em] text-ivory sm:text-4xl lg:text-5xl">
           {profile.name}
         </p>
         <div className="gold-rule mt-8" />
 
         <ul className="mt-10 space-y-1">
           {titles.map((title) => (
-            <li key={title} className="font-serif text-2xl italic tracking-wide text-gold sm:text-3xl">
+            <li key={title} className="font-serif text-lg italic tracking-wide text-gold sm:text-xl">
               {title}
             </li>
           ))}
         </ul>
 
-        <p className="font-quote mt-10 max-w-xl text-2xl leading-snug text-ivory/80 sm:text-3xl">
+        <p className="font-quote mt-10 max-w-xl text-lg leading-snug text-ivory/80 sm:text-xl">
           {profile.supportingMessage.join(' ')}
         </p>
 
@@ -36,13 +36,13 @@ export function Footer() {
             <ul className="grid grid-cols-2 gap-x-8 gap-y-3">
               {navigation.map((item) => (
                 <li key={item.path}>
-                  <Link to={item.path} className="editorial-underline font-serif text-xl italic tracking-wide text-ivory">
+                  <Link to={item.path} className="editorial-underline font-serif text-base italic tracking-wide text-ivory">
                     {item.label}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link to="/recognition" className="editorial-underline font-serif text-xl italic tracking-wide text-ivory">
+                <Link to="/recognition" className="editorial-underline font-serif text-base italic tracking-wide text-ivory">
                   Recognition
                 </Link>
               </li>
@@ -58,7 +58,7 @@ export function Footer() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="editorial-underline font-serif text-xl italic tracking-wide text-ivory"
+                    className="editorial-underline font-serif text-base italic tracking-wide text-ivory"
                   >
                     {link.label}
                   </a>
@@ -66,7 +66,7 @@ export function Footer() {
               ))}
               {site.email ? (
                 <li>
-                  <a href={`mailto:${site.email}`} className="editorial-underline font-serif text-xl italic text-ivory">
+                  <a href={`mailto:${site.email}`} className="editorial-underline font-serif text-base italic text-ivory">
                     Email
                   </a>
                 </li>
@@ -76,7 +76,7 @@ export function Footer() {
 
           <div className="lg:col-span-4">
             <p className="label mb-6 text-gold">Enquire</p>
-            <p className="font-quote max-w-xs text-2xl leading-snug text-ivory/85">
+            <p className="font-quote max-w-xs text-lg leading-snug text-ivory/85">
               Partnerships, platforms and conversations that carry the work forward.
             </p>
             <div className="mt-8">
@@ -90,7 +90,7 @@ export function Footer() {
 
       <div className="border-t border-ivory/12">
         <div className="mx-auto flex max-w-page flex-col gap-4 px-5 py-7 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-12">
-          <p className="text-sm tracking-wide text-ivory/50">
+          <p className="text-xs tracking-wide text-ivory/50">
             © {year} {profile.name}
           </p>
           <div className="flex gap-8">

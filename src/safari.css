@@ -97,33 +97,3 @@ html.is-safari .site-nav-progress {
     font-size: 0.85rem;
   }
 }
-
-html.is-safari .site-footer .font-display {
-  font-size: 2.35rem !important;
-  line-height: 1.05 !important;
-}
-
-html.is-safari .site-footer .font-quote {
-  font-size: 1.15rem !important;
-  line-height: 1.35 !important;
-}
-
-html.is-safari .site-footer .font-serif {
-  font-size: 1.05rem !important;
-}
-
-html.is-safari .site-footer .label {
-  font-size: 0.92rem !important;
-}
-
-html.is-safari .site-footer .text-sm {
-  font-size: 0.7rem !important;
-}
-
-html.is-safari .site-footer .nav-link {
-  font-size: 8px !important;
-}
-
-html.is-safari .site-footer .text-xs {
-  font-size: 0.65rem !important;
-}
