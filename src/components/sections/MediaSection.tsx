@@ -14,7 +14,7 @@ export function MediaCard({ item }: { item: MediaItem }) {
         <SmartImage
           src={item.image}
           alt={item.title}
-          className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className="aspect-[16/10] w-full object-cover object-top ken-burns"
         />
       </div>
       <div className="md:col-span-8">
@@ -23,7 +23,7 @@ export function MediaCard({ item }: { item: MediaItem }) {
           {item.date ? ` · ${item.date}` : ''}
         </p>
         <h3 className="mt-3 font-serif text-3xl sm:text-4xl">{item.title}</h3>
-        <p className="mt-4 max-w-xl text-stone">{item.description}</p>
+        <p className="mt-4 max-w-xl text-charcoal">{item.description}</p>
         {item.url ? (
           <p className="mt-5 inline-flex items-center gap-2 text-sm tracking-wide">
             Read
@@ -55,7 +55,7 @@ export function MediaSection({ preview = false }: { preview?: boolean }) {
         <SectionHeading
           kicker={preview ? '11 — Press' : 'Press'}
           title="In the Media"
-          description="Selected public coverage. Additional interviews, magazines and broadcasts can be added from the media data file."
+          description="Selected public coverage."
         />
         <div className="mt-10">
           {items.map((item, index) => (

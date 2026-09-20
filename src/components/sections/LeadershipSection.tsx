@@ -20,7 +20,7 @@ export function LeadershipSection({ preview = false }: { preview?: boolean }) {
               <SmartImage
                 src={role.image}
                 alt=""
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-top"
               />
             </ImageReveal>
             <div
@@ -44,7 +44,7 @@ export function LeadershipSection({ preview = false }: { preview?: boolean }) {
               {role.location ? (
                 <p className="mt-3 text-sm tracking-wide opacity-70">{role.location}</p>
               ) : null}
-              <p className="mt-6 max-w-md text-sm leading-relaxed opacity-80">
+              <p className="mt-6 max-w-md font-serif italic text-lg leading-relaxed">
                 {role.summary}
               </p>
               {role.focus.length > 0 ? (

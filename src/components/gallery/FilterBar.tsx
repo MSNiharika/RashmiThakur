@@ -26,10 +26,10 @@ export function FilterBar({
               aria-selected={active}
               onClick={() => onChange(item.id)}
               className={cn(
-                'label pb-2 transition-colors',
-                active
-                  ? 'border-b border-gold text-charcoal'
-                  : 'border-b border-transparent text-stone hover:text-charcoal',
+                'label relative pb-2 transition-colors duration-500',
+              active
+                ? 'text-charcoal after:absolute after:inset-x-0 after:bottom-0 after:h-px after:scale-x-100 after:bg-gold after:transition-transform after:duration-500'
+                : 'text-stone after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-left after:scale-x-0 after:bg-gold after:transition-transform after:duration-500 hover:text-charcoal hover:after:scale-x-100',
               )}
             >
               {item.label}

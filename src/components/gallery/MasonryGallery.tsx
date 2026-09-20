@@ -62,33 +62,30 @@ export function MasonryGallery({
           <motion.button
             key={item.id}
             type="button"
-            data-cursor="view"
             className={cn(
               'group relative flex w-full flex-col overflow-hidden text-left',
               isAll && 'masonry-item',
             )}
             initial={reduce ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.35 }}
+            transition={{ duration: 0.55, delay: index * 0.03, ease: [0.22, 1, 0.36, 1] }}
             onClick={() => setActive(index)}
+            aria-label={item.caption}
           >
             <div
               className={cn(
-                'overflow-hidden',
+                'relative overflow-hidden',
                 isAll ? aspectClass[item.aspect] : 'aspect-[4/5]',
               )}
             >
               <SmartImage
                 src={item.image}
                 alt={item.alt}
-                className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                className="ken-burns h-full w-full object-cover object-top"
               />
             </div>
-            <span className="mt-3 flex min-h-[2.5rem] items-start justify-between gap-4">
-              <span className="font-serif text-xl leading-tight">{item.title}</span>
-              <span className="label shrink-0 pt-1 text-stone">
-                {item.category.replace('-', ' ')}
-              </span>
+            <span className="mt-3 flex justify-end">
+              <span className="label text-stone">{item.caption}</span>
             </span>
           </motion.button>
         ))}

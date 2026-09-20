@@ -10,7 +10,7 @@ export const leadershipRoles: LeadershipRole[] = [
       'Human rights advocacy',
       'Social development',
     ],
-    image: '/images/leadership/world-women-federation.svg',
+    image: '/images/photos/020.jpg',
     summary:
       'As President of the World Women Federation, she leads initiatives focused on women’s leadership, human rights advocacy and social development.',
   },
@@ -20,7 +20,7 @@ export const leadershipRoles: LeadershipRole[] = [
     position: 'Board Director',
     location: 'Kerala, India',
     focus: [],
-    image: '/images/leadership/kalam-smriti.svg',
+    image: '/images/photos/002.jpg',
     summary:
       'She serves as Board Director at the Dr. Kalam Smriti International Governing Council in Kerala, India.',
   },

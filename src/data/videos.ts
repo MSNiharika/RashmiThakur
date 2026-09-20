@@ -11,7 +11,7 @@ export const videos: VideoItem[] = [
     category: 'International Journey',
     provider: 'placeholder',
     url: '',
-    poster: '/images/videos/international.svg',
+    poster: '',
     description: 'Film to be added.',
   },
   {
@@ -20,7 +20,7 @@ export const videos: VideoItem[] = [
     category: 'Peace Initiatives',
     provider: 'placeholder',
     url: '',
-    poster: '/images/videos/peace.svg',
+    poster: '',
     description: 'Film to be added.',
   },
   {
@@ -29,7 +29,7 @@ export const videos: VideoItem[] = [
     category: 'Women Empowerment',
     provider: 'placeholder',
     url: '',
-    poster: '/images/videos/women.svg',
+    poster: '',
     description: 'Film to be added.',
   },
   {
@@ -38,7 +38,7 @@ export const videos: VideoItem[] = [
     category: 'Indian Handloom',
     provider: 'placeholder',
     url: '',
-    poster: '/images/videos/handloom.svg',
+    poster: '',
     description: 'Film to be added.',
   },
   {
@@ -47,7 +47,7 @@ export const videos: VideoItem[] = [
     category: 'Media',
     provider: 'placeholder',
     url: '',
-    poster: '/images/videos/media.svg',
+    poster: '',
     description: 'Film to be added.',
   },
   {
@@ -56,7 +56,7 @@ export const videos: VideoItem[] = [
     category: 'Fashion / Pageants',
     provider: 'placeholder',
     url: '',
-    poster: '/images/videos/fashion.svg',
+    poster: '',
     description: 'Film to be added.',
   },
 ]

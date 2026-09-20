@@ -4,7 +4,7 @@ export const profile: Profile = {
   name: 'Rashmi Thakur',
   firstName: 'Rashmi',
   lastName: 'Thakur',
-  primaryTitle: 'Global Peace Advocate | Women Empowerment Leader | Indian Handloom Ambassador ',
+  primaryTitle: 'Global Peace Advocate | Women Empowerment Leader | Indian Handloom Ambassador',
   secondaryTitles: ['Social Impact Leader', 'Cultural Ambassador'],
   supportingMessage: [
     'Empowering communities.',

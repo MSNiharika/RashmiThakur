@@ -14,10 +14,10 @@ export function BeyondTheCrown() {
         <SectionHeading kicker="02" title="Beyond the Crown" />
         <div className="mt-16 grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-6 lg:pr-8">
-            <EditorialText>
+            <EditorialText className="max-w-xl">
               A journey shaped by purpose, leadership, culture and social impact.
             </EditorialText>
-            <p className="mt-8 max-w-xl text-base leading-relaxed text-stone">
+            <p className="mt-8 max-w-xl text-base leading-relaxed text-charcoal">
               Her journey spans international beauty platforms, global peace
               initiatives, women’s leadership and the preservation of India’s
               cultural heritage.
@@ -34,7 +34,7 @@ export function BeyondTheCrown() {
             <SmartImage
               src={images.beyondTheCrown.src}
               alt={images.beyondTheCrown.alt}
-              className="aspect-[4/5] w-full object-cover"
+              className="aspect-[4/5] w-full object-cover object-top"
             />
           </ImageReveal>
         </div>

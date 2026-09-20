@@ -21,7 +21,7 @@ export function SectionHeading({
   return (
     <FadeIn
       className={cn(
-        'max-w-3xl',
+        'group max-w-3xl',
         align === 'center' && 'mx-auto text-center',
         className,
       )}
@@ -38,18 +38,19 @@ export function SectionHeading({
       ) : null}
       <h2
         className={cn(
-          'font-serif text-4xl leading-[1.05] sm:text-5xl lg:text-6xl',
+          'font-serif italic font-bold text-[2rem] leading-[1.08] sm:text-[2.5rem] lg:text-[3rem]',
           light ? 'text-ivory' : 'text-charcoal',
         )}
       >
         {title}
       </h2>
+      <div className={cn('gold-rule mt-6', light && 'bg-gold-soft')} />
       {description ? (
         <p
           className={cn(
-            'mt-6 max-w-xl text-base leading-relaxed sm:text-lg',
+            'mt-6 max-w-xl font-serif italic text-xl leading-snug sm:text-2xl',
             align === 'center' && 'mx-auto',
-            light ? 'text-ivory/75' : 'text-stone',
+            light ? 'text-ivory/90' : 'text-charcoal',
           )}
         >
           {description}

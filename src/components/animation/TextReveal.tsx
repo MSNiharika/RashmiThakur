@@ -13,15 +13,15 @@ export function TextReveal({
   const reduce = useReducedMotion()
 
   return (
-    <span className={`block overflow-hidden ${className ?? ''}`}>
-      <motion.span
+    <div className={`overflow-hidden ${className ?? ''}`}>
+      <motion.div
         className="block"
-        initial={reduce ? false : { y: '110%' }}
+        initial={reduce ? false : { y: 48 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.9, delay, ease: [0.22, 1, 0.36, 1] }}
       >
         {children}
-      </motion.span>
-    </span>
+      </motion.div>
+    </div>
   )
 }

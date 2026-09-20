@@ -3,6 +3,7 @@ import { HandloomSection } from '@/components/sections/HandloomSection'
 import { Container } from '@/components/ui/Container'
 import { Meta } from '@/components/ui/Meta'
 import { PageHero } from '@/components/ui/PageHero'
+import { PortraitFrame } from '@/components/ui/PortraitFrame'
 import { SmartImage } from '@/components/ui/SmartImage'
 import { useHandloom } from '@/hooks/useHandloom'
 import { seo } from '@/data/site'
@@ -21,7 +22,7 @@ export default function Handloom() {
     alt: item.alt,
     caption: item.caption,
     aspect: '4/5',
-    placeholder: true,
+    placeholder: false,
   }))
 
   return (
@@ -42,40 +43,42 @@ export default function Handloom() {
             <FadeIn className={index % 2 ? 'lg:col-span-5 lg:col-start-8' : 'lg:col-span-5'}>
               <p className="label text-gold">0{index + 1}</p>
               <h2 className="mt-4 font-serif text-4xl sm:text-5xl">{section.title}</h2>
-              <p className="mt-6 text-lg leading-relaxed text-stone">{section.body}</p>
+              <p className="mt-6 font-serif italic text-xl leading-relaxed text-charcoal">{section.body}</p>
             </FadeIn>
             <div className={index % 2 ? 'lg:col-span-6 lg:col-start-1 lg:row-start-1' : 'lg:col-span-6 lg:col-start-7'}>
-              <SmartImage
-                src={section.image}
-                alt=""
-                className="aspect-[16/10] w-full object-cover"
-              />
+              <PortraitFrame src={section.image} alt="" focus="center 42%" />
             </div>
           </Container>
         </section>
       ))}
+      {gallery.length > 0 ? (
       <section className="bg-ivory py-24">
         <Container>
-          <h2 className="font-serif text-4xl sm:text-5xl">Image Gallery</h2>
+          <h2 className="font-serif italic text-4xl sm:text-5xl">Image Gallery</h2>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {gallery.map((item, index) => (
               <button
                 key={item.id}
                 type="button"
-                data-cursor="view"
                 onClick={() => setActive(index)}
-                className="overflow-hidden"
+                className="group relative overflow-hidden"
               >
                 <SmartImage
                   src={item.src}
                   alt={item.alt}
-                  className="aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-105"
+                  focus="center 28%"
+                  className="ken-burns aspect-[4/5] w-full object-cover"
                 />
+                <span className="media-veil" />
+                <span className="media-copy absolute inset-x-0 bottom-0 z-[1] p-3 text-left text-ivory">
+                  <span className="font-serif italic text-lg">{item.caption}</span>
+                </span>
               </button>
             ))}
           </div>
         </Container>
       </section>
+      ) : null}
       <Lightbox
         items={lightboxItems}
         index={active}

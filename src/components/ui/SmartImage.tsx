@@ -3,6 +3,13 @@ import { useEffect, useState, type ImgHTMLAttributes } from 'react'
 
 type Props = ImgHTMLAttributes<HTMLImageElement> & {
   fallbackLabel?: string
+  /** Override automatic object-position, e.g. "center 32%" */
+  focus?: string
+}
+
+function positionForSize(width: number, height: number) {
+  if (width > height * 1.12) return 'center center'
+  return 'center 28%'
 }
 
 export function SmartImage({
@@ -11,13 +18,18 @@ export function SmartImage({
   className,
   fallbackLabel = 'Image to be added',
   loading = 'lazy',
+  style,
+  onLoad,
+  focus,
   ...props
 }: Props) {
   const [failed, setFailed] = useState(false)
+  const [objectPosition, setObjectPosition] = useState(focus ?? 'center 28%')
 
   useEffect(() => {
     setFailed(false)
-  }, [src])
+    setObjectPosition(focus ?? 'center 28%')
+  }, [src, focus])
 
   if (!src || failed) {
     return (
@@ -40,7 +52,17 @@ export function SmartImage({
       alt={alt ?? ''}
       loading={loading}
       decoding="async"
-      className={className}
+      className={cn('origin-top object-cover', className)}
+      style={{ objectPosition, ...style }}
+      onLoad={(event) => {
+        if (!focus) {
+          const { naturalWidth, naturalHeight } = event.currentTarget
+          if (naturalWidth && naturalHeight) {
+            setObjectPosition(positionForSize(naturalWidth, naturalHeight))
+          }
+        }
+        onLoad?.(event)
+      }}
       onError={() => setFailed(true)}
       {...props}
     />

@@ -17,12 +17,15 @@ export function ParallaxImage({
     target: ref,
     offset: ['start end', 'end start'],
   })
-  const y = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [strength, -strength])
-  const scale = useTransform(scrollYProgress, [0, 1], reduce ? [1, 1] : [1.08, 1])
+  const y = useTransform(
+    scrollYProgress,
+    [0, 1],
+    reduce ? [0, 0] : [0, -Math.min(strength, 18)],
+  )
 
   return (
     <div ref={ref} className={cn('overflow-hidden', className)}>
-      <motion.div style={{ y, scale }} className="h-full w-full will-change-transform">
+      <motion.div style={{ y }} className="h-[112%] w-full will-change-transform">
         {children}
       </motion.div>
     </div>

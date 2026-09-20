@@ -41,11 +41,11 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           aria-label="Menu"
         >
           <div className="flex items-center justify-between px-5 py-5 sm:px-8">
-            <p className="font-serif text-xl tracking-wide">{profile.name}</p>
+            <p className="font-display text-2xl italic">{profile.name}</p>
             <button
               type="button"
               onClick={onClose}
-              className="label text-charcoal"
+              className="nav-link text-charcoal"
               autoFocus
             >
               Close
@@ -64,7 +64,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
                   end={item.path === '/'}
                   onClick={onClose}
                   className={({ isActive }) =>
-                    `block border-b border-charcoal/10 py-4 font-serif text-4xl sm:text-5xl ${
+                    `block border-b border-charcoal/10 py-4 font-display italic text-4xl sm:text-5xl ${
                       isActive ? 'text-gold' : 'text-charcoal'
                     }`
                   }

@@ -17,8 +17,8 @@ export default function NotFound() {
       <section className="flex min-h-[80vh] items-center bg-ivory pt-32">
         <Container>
           <p className="label text-gold">404</p>
-          <h1 className="mt-4 font-serif text-5xl sm:text-7xl">This page is not here.</h1>
-          <p className="mt-6 max-w-xl text-stone">
+          <h1 className="mt-4 font-display text-5xl sm:text-7xl">This page is not here.</h1>
+          <p className="mt-6 max-w-xl text-charcoal">
             The address may have changed. Return home, or continue through the
             journey, portfolio or contact pages.
           </p>

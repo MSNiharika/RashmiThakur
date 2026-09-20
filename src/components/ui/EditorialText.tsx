@@ -11,7 +11,7 @@ export function EditorialText({
   return (
     <p
       className={cn(
-        'font-serif text-2xl leading-snug text-charcoal sm:text-3xl lg:text-[2.35rem] lg:leading-[1.25]',
+        'font-serif italic text-[1.65rem] leading-snug text-charcoal sm:text-[1.85rem] lg:text-[2rem] lg:leading-[1.3]',
         className,
       )}
     >

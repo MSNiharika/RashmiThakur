@@ -20,13 +20,13 @@ export function AwardList({ preview = false }: { preview?: boolean }) {
           {awards.map((award, index) => (
             <FadeIn key={award.id} delay={index * 0.04}>
               <li className="grid gap-4 py-8 md:grid-cols-12 md:items-baseline">
-                <p className="font-serif text-4xl text-gold md:col-span-3">
+                <p className="font-display text-4xl text-gold md:col-span-3">
                   {formatYear(award.year)}
                 </p>
                 <div className="md:col-span-9">
                   <h3 className="font-serif text-3xl sm:text-4xl">{award.title}</h3>
                   {award.organization ? (
-                    <p className="mt-2 text-stone">{award.organization}</p>
+                    <p className="mt-2 text-charcoal">{award.organization}</p>
                   ) : null}
                 </div>
               </li>

@@ -11,14 +11,14 @@ export function QuoteSection() {
         <SmartImage
           src={images.statement.src}
           alt={images.statement.alt}
-          className="h-full min-h-[88vh] w-full object-cover"
+          className="h-full min-h-[88vh] w-full object-cover object-top"
         />
       </ParallaxImage>
       <div className="absolute inset-0 bg-[rgba(12,11,10,0.72)]" />
       <div className="relative mx-auto max-w-page px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
         <p className="label text-gold-soft">12 — Statement</p>
         <FadeIn>
-          <blockquote className="mt-8 max-w-4xl font-serif text-3xl leading-tight text-ivory sm:text-5xl lg:text-6xl">
+          <blockquote className="font-quote mt-8 max-w-4xl text-3xl leading-tight text-ivory sm:text-5xl lg:text-6xl">
             {profile.personalStatement}
           </blockquote>
         </FadeIn>

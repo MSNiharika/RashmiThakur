@@ -8,7 +8,6 @@ export type SocialNetwork =
   | 'linkedin'
   | 'facebook'
   | 'youtube'
-  | 'whatsapp'
   | 'email'
   | 'x'
 
@@ -165,5 +164,6 @@ export type SiteImages = {
   handloom: { hero: string; gallery: string[] }
   statement: { src: string; alt: string }
   map: { src: string; alt: string }
+  portfolioHero: { src: string; alt: string }
   og: string
 }

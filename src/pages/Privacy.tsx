@@ -10,7 +10,7 @@ export default function Privacy() {
       <Meta meta={seo.privacy} />
       <PageHero kicker="Legal" title="Privacy Policy" />
       <section className="bg-ivory pb-24">
-        <Container className="max-w-3xl space-y-6 text-stone">
+        <Container className="max-w-3xl space-y-6 text-charcoal">
           <p>
             This website is a static presentation of {profile.name}’s public
             professional work. It does not operate user accounts and does not

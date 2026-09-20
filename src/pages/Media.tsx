@@ -1,6 +1,5 @@
 import { FilterBar } from '@/components/gallery/FilterBar'
 import { MediaCard } from '@/components/sections/MediaSection'
-import { VideoSection } from '@/components/sections/VideoSection'
 import { Container } from '@/components/ui/Container'
 import { Meta } from '@/components/ui/Meta'
 import { PageHero } from '@/components/ui/PageHero'
@@ -12,9 +11,6 @@ import { useMemo, useState } from 'react'
 const filters: { id: 'all' | MediaCategory; label: string }[] = [
   { id: 'all', label: 'All' },
   { id: 'news', label: 'News' },
-  { id: 'interviews', label: 'Interviews' },
-  { id: 'magazines', label: 'Magazines' },
-  { id: 'tv', label: 'TV' },
   { id: 'events', label: 'Events' },
 ]
 
@@ -32,7 +28,7 @@ export default function Media() {
       <PageHero
         kicker="Media"
         title="In the media"
-        description="News, interviews, magazines, television and events. External links open in a new tab."
+        description="Selected public coverage. External links open in a new tab."
       />
       <section className="bg-ivory pb-8">
         <Container>
@@ -51,7 +47,6 @@ export default function Media() {
           </div>
         </Container>
       </section>
-      <VideoSection />
     </>
   )
 }

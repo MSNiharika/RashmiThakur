@@ -52,7 +52,7 @@ export function Lightbox({ items, index, onClose, onIndex }: LightboxProps) {
           exit={{ opacity: 0 }}
           role="dialog"
           aria-modal="true"
-          aria-label={item.title}
+          aria-label={item.caption}
           onClick={onClose}
         >
           <div className="flex items-center justify-between px-5 py-4 text-ivory sm:px-8">
@@ -110,9 +110,6 @@ export function Lightbox({ items, index, onClose, onIndex }: LightboxProps) {
               <ChevronRight className="size-8" />
             </button>
           </div>
-          <p className="px-5 pb-6 text-center font-serif text-2xl text-ivory sm:text-3xl">
-            {item.title}
-          </p>
         </motion.div>
       ) : null}
     </AnimatePresence>

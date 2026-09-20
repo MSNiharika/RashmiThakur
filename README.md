@@ -124,7 +124,6 @@ Edit `src/data/site.ts`.
 
 - Leave a `href` empty to hide that network.
 - Set `email` to enable mailto from the contact form.
-- Set `whatsapp` to a number or `https://wa.me/...` URL to show the WhatsApp button.
 - Set `formEndpoint` if you later add a third-party form service.
 - Set `url` to the production domain before launch (also update `public/robots.txt` and `public/sitemap.xml`).
 

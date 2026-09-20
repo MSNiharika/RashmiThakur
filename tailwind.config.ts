@@ -14,10 +14,11 @@ export const tokens = {
     gold: '#9C8456',
     goldSoft: '#C4B28A',
     earth: '#6F5240',
-    stone: '#7A746A',
+    stone: '#3D3932',
     mist: '#D8D1C3',
   },
   fonts: {
+    display: '"Playfair Display", ui-serif, Georgia, "Times New Roman", serif',
     serif: '"Cormorant Garamond", ui-serif, Georgia, "Times New Roman", serif',
     sans: '"Manrope", ui-sans-serif, system-ui, sans-serif',
   },
@@ -40,6 +41,7 @@ const config: Config = {
         mist: tokens.colors.mist,
       },
       fontFamily: {
+        display: [tokens.fonts.display],
         serif: [tokens.fonts.serif],
         sans: [tokens.fonts.sans],
       },

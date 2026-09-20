@@ -12,17 +12,15 @@ export const site: {
   ogImage: string
   email: string
   phone: string
-  whatsapp: string
   formEndpoint: string
 } = {
   name: 'Rashmi Thakur',
   url: 'https://www.rashmithakur.com',
   locale: 'en_IN',
-  ogImage: '/images/og.svg',
-  email: '',
+  ogImage: '/images/photos/012.jpg',
+  email: 'rraxshmi24@gmail.com',
   phone: '',
-  whatsapp: '',
-  formEndpoint: '',
+  formEndpoint: 'https://formsubmit.co/ajax/rraxshmi24@gmail.com',
 }
 
 export const navigation: NavItem[] = [
@@ -54,10 +52,9 @@ export const socialLinks: SocialLink[] = [
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/rraxshmithakur',
   },
-  { id: 'instagram', label: 'Instagram', href: '' },
+  { id: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/rraxshmi/' },
   { id: 'facebook', label: 'Facebook', href: '' },
   { id: 'youtube', label: 'YouTube', href: '' },
-  { id: 'whatsapp', label: 'WhatsApp', href: '' },
   { id: 'email', label: 'Email', href: '' },
 ]
 

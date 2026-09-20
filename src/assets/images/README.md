@@ -1,8 +1,8 @@
-# Image placeholders
+# Images
 
-Photographs should be added under `public/images/` (this folder is a mirror of those placeholders).
+Photographs live under `public/images/` and are referenced from `src/data/`.
 
-1. Drop a file such as `public/images/hero/hero.jpg`
+1. Drop a file such as `public/images/hero/portrait.jpg`
 2. Update the path in `src/data/images.ts`, `src/data/portfolio.ts`, `src/data/media.ts`, or `src/data/videos.ts`
 3. Write accurate `alt` text
 4. Set `placeholder: false` on portfolio/media items once a real image is used

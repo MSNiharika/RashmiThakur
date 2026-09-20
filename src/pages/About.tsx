@@ -5,44 +5,44 @@ import { Container } from '@/components/ui/Container'
 import { Meta } from '@/components/ui/Meta'
 import { PageHero } from '@/components/ui/PageHero'
 import { SmartImage } from '@/components/ui/SmartImage'
-import { images } from '@/data/images'
+import { aboutSectionImages } from '@/data/images'
 import { profile } from '@/data/profile'
 import { seo } from '@/data/site'
 
 const sections = [
   {
     title: 'Introduction',
-    image: images.aboutPortrait.src,
+    image: aboutSectionImages[0].src,
     body: profile.biography[0],
   },
   {
     title: 'Professional journey',
-    image: images.beyondTheCrown.src,
+    image: aboutSectionImages[1].src,
     body: profile.biography[2],
   },
   {
     title: 'Social impact',
-    image: images.impact.peace.src,
+    image: aboutSectionImages[2].src,
     body: profile.biography[1],
   },
   {
     title: "Women's leadership",
-    image: images.leadership.wwf.src,
+    image: aboutSectionImages[3].src,
     body: profile.biography[3],
   },
   {
     title: 'Cultural advocacy',
-    image: images.pillars.heritage.src,
+    image: aboutSectionImages[4].src,
     body: 'Her public work treats culture as a living language — a way of representing India with dignity, continuity and care.',
   },
   {
     title: 'Handloom',
-    image: images.handloom.hero,
+    image: aboutSectionImages[5].src,
     body: profile.biography[4],
   },
   {
     title: 'International journey',
-    image: images.pillars.peace.src,
+    image: aboutSectionImages[6].src,
     body: 'From national titles to an international stage in Malaysia, the pageant years became a passage — not a destination — toward a broader public role.',
   },
 ]
@@ -66,7 +66,7 @@ export default function About() {
               <SmartImage
                 src={section.image}
                 alt=""
-                className="aspect-[4/5] w-full object-cover"
+                className="aspect-[4/5] w-full object-cover object-top"
               />
             </ImageReveal>
             <FadeIn
@@ -78,7 +78,7 @@ export default function About() {
             >
               <p className="label text-gold">0{index + 1}</p>
               <h2 className="mt-4 font-serif text-4xl sm:text-5xl">{section.title}</h2>
-              <p className="mt-6 text-lg leading-relaxed text-stone">{section.body}</p>
+              <p className="mt-6 font-serif italic text-xl leading-relaxed text-charcoal">{section.body}</p>
             </FadeIn>
           </Container>
         </section>

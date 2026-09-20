@@ -2,17 +2,25 @@ import { DesktopNav } from '@/components/navigation/DesktopNav'
 import { MobileMenu } from '@/components/navigation/MobileMenu'
 import { profile } from '@/data/profile'
 import { cn } from '@/lib/cn'
+import { motion, useReducedMotion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 export function Header() {
   const { pathname } = useLocation()
+  const reduce = useReducedMotion()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const [progress, setProgress] = useState(0)
   const overHero = pathname === '/' && !scrolled && !open
+  const launch = pathname === '/'
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12)
+    const onScroll = () => {
+      setScrolled(window.scrollY > 12)
+      const max = document.documentElement.scrollHeight - window.innerHeight
+      setProgress(max > 0 ? window.scrollY / max : 0)
+    }
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
@@ -23,39 +31,43 @@ export function Header() {
     setScrolled(window.scrollY > 12)
   }, [pathname])
 
+  const ink = overHero ? '#F4EFE6' : '#1A1815'
+
   return (
     <>
-      <header
-        className={cn(
-          'fixed inset-x-0 top-0 z-40 transition-[background,border-color,backdrop-filter] duration-500',
-          scrolled || open
-            ? 'border-b border-charcoal/10 bg-ivory/90 backdrop-blur-md'
-            : overHero
-              ? 'border-b border-white/20 bg-black/55 backdrop-blur-sm'
-              : 'border-b border-transparent bg-transparent',
-        )}
+      <motion.header
+        initial={reduce || !launch ? false : { opacity: 0, y: -18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, delay: launch ? 0.12 : 0, ease: [0.22, 1, 0.36, 1] }}
+        className="site-header"
       >
-        <div className="mx-auto flex h-[var(--header-h)] max-w-page items-center justify-between px-5 sm:px-8 lg:px-12">
-          <Link
-            to="/"
-            className="font-serif text-lg tracking-[0.18em] uppercase sm:text-xl"
-            style={{ color: overHero ? '#F4EFE6' : '#1A1815' }}
-          >
-            {profile.name}
+        <div
+          className={cn('site-nav-bar', overHero ? 'is-on-hero' : 'is-on-page', scrolled && 'is-scrolled')}
+          style={{ color: ink }}
+        >
+          <Link to="/" className="site-logo">
+            <span className="site-logo-mark" aria-hidden="true">
+              RT
+            </span>
+            <span className="site-logo-name">{profile.name}</span>
           </Link>
+          <span className="site-nav-split" aria-hidden="true" />
           <DesktopNav inverted={overHero} />
+          <Link to="/contact" className="site-nav-enquire">
+            Enquire
+          </Link>
           <button
             type="button"
-            className="label lg:hidden"
-            style={{ color: overHero ? '#F4EFE6' : '#1A1815' }}
+            className="nav-link site-nav-menu"
             aria-expanded={open}
             aria-controls="mobile-menu"
             onClick={() => setOpen(true)}
           >
             Menu
           </button>
+          <span className="site-nav-progress" style={{ transform: `scaleX(${progress})` }} />
         </div>
-      </header>
+      </motion.header>
       <MobileMenu open={open} onClose={() => setOpen(false)} />
     </>
   )

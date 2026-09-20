@@ -1,59 +1,88 @@
 import { FadeIn } from '@/components/animation/FadeIn'
 import { Container } from '@/components/ui/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading'
+import { SmartImage } from '@/components/ui/SmartImage'
 
-const points = [
-  { id: 'india', label: 'India', detail: 'Home, heritage and handloom' },
-  { id: 'malaysia', label: 'Malaysia', detail: 'Miss Asia International, 2016' },
-  { id: 'platforms', label: 'International Platforms', detail: 'Beauty, culture and public presence' },
-  { id: 'dialogue', label: 'Global Dialogue', detail: 'Peace, leadership and humanitarian conversation' },
+const locations = [
+  {
+    id: 'india',
+    label: 'India',
+    detail: 'Home, heritage and handloom',
+    src: '/images/photos/014.jpg',
+    alt: 'Rashmi Thakur in a magenta handloom saree in India',
+    focus: 'center 32%',
+  },
+  {
+    id: 'malaysia',
+    label: 'Malaysia',
+    detail: 'Kuala Lumpur · Miss Asia International',
+    src: '/images/photos/090.jpg',
+    alt: 'Rashmi Thakur before the Petronas Towers in Kuala Lumpur',
+    focus: 'center 22%',
+  },
+  {
+    id: 'paris',
+    label: 'Paris',
+    detail: 'France · international presence',
+    src: '/images/photos/099.jpg',
+    alt: 'Rashmi Thakur in Paris, photographed against a Haussmann building',
+    focus: 'center 18%',
+  },
+  {
+    id: 'cannes',
+    label: 'Cannes',
+    detail: 'Festival de Cannes · France',
+    src: '/images/photos/021.jpg',
+    alt: 'Rashmi Thakur on the red carpet at the Cannes Film Festival',
+    focus: 'center 16%',
+  },
+  {
+    id: 'giza',
+    label: 'Giza',
+    detail: 'Pyramids of Giza · Cairo, Egypt',
+    src: '/images/photos/039.jpg',
+    alt: 'Rashmi Thakur at the Pyramids of Giza',
+    focus: 'center 28%',
+  },
+  {
+    id: 'sri-lanka',
+    label: 'Sri Lanka',
+    detail: 'International platforms and presence',
+    src: '/images/photos/091.jpg',
+    alt: 'Rashmi Thakur in Sri Lanka, with Colombo’s skyline behind her',
+    focus: 'center 20%',
+  },
 ]
 
 export function GlobalPresence() {
   return (
     <section className="bg-ivory-soft py-24 lg:py-32">
       <Container>
-        <SectionHeading kicker="08 — Presence" title="Global Presence" />
-        <div className="mt-16 grid items-center gap-12 lg:grid-cols-12">
-          <FadeIn className="lg:col-span-7">
-            <div className="relative aspect-[16/10] overflow-hidden bg-sand">
-              <svg
-                viewBox="0 0 800 500"
-                className="h-full w-full"
-                role="img"
-                aria-label="Decorative map marking India and Malaysia"
-              >
-                <rect width="800" height="500" fill="#E7DFD0" />
-                <g fill="none" stroke="#9C8456" strokeOpacity="0.35" strokeWidth="1">
-                  <ellipse cx="400" cy="250" rx="280" ry="150" />
-                  <ellipse cx="400" cy="250" rx="210" ry="110" />
-                  <path d="M80 250 C 220 80, 580 80, 720 250 C 580 420, 220 420, 80 250" />
-                </g>
-                <circle cx="545" cy="250" r="6" fill="#9C8456" />
-                <circle cx="575" cy="278" r="4" fill="#1A1815" />
-                <path d="M545 250 C 555 255, 565 268, 575 278" stroke="#1A1815" strokeWidth="1" fill="none" />
-                <text x="510" y="228" fill="#1A1815" fontFamily="Georgia, serif" fontSize="18">
-                  India
-                </text>
-                <text x="584" y="300" fill="#1A1815" fontFamily="Georgia, serif" fontSize="14">
-                  Malaysia
-                </text>
-              </svg>
-            </div>
-          </FadeIn>
-          <div className="lg:col-span-5">
-            <ul className="divide-y divide-charcoal/10">
-              {points.map((point, index) => (
-                <FadeIn key={point.id} delay={index * 0.08}>
-                  <li className="py-5">
-                    <p className="label text-gold">0{index + 1}</p>
-                    <h3 className="mt-2 font-serif text-3xl">{point.label}</h3>
-                    <p className="mt-2 text-stone">{point.detail}</p>
-                  </li>
-                </FadeIn>
-              ))}
-            </ul>
-          </div>
+        <SectionHeading
+          kicker="08 — Presence"
+          title="Global Presence"
+          description="From India to Malaysia, France, Egypt and Sri Lanka — a path photographed across continents."
+        />
+        <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {locations.map((place, index) => (
+            <FadeIn key={place.id} delay={index * 0.06}>
+              <article className="group relative isolate aspect-[4/5] overflow-hidden bg-sand">
+                <SmartImage
+                  src={place.src}
+                  alt={place.alt}
+                  focus={place.focus}
+                  className="ken-burns h-full w-full object-cover"
+                />
+                <div className="media-veil" />
+                <div className="absolute inset-x-0 bottom-0 p-6 lg:p-8">
+                  <p className="label text-gold-soft">0{index + 1}</p>
+                  <h3 className="mt-3 font-display text-4xl text-ivory lg:text-5xl">{place.label}</h3>
+                  <div className="gold-rule mt-4 bg-gold-soft" />
+                  <p className="mt-3 text-sm text-ivory/90">{place.detail}</p>
+                </div>
+              </article>
+            </FadeIn>
+          ))}
         </div>
       </Container>
     </section>

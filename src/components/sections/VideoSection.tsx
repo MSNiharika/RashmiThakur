@@ -53,7 +53,7 @@ export function VideoSection() {
                         <SmartImage
                           src={video.poster}
                           alt={video.title}
-                          className="h-full w-full object-cover"
+                          className="h-full w-full object-cover object-top"
                         />
                         <button
                           type="button"
@@ -72,7 +72,7 @@ export function VideoSection() {
                   <p className="label mt-4 text-gold">{video.category}</p>
                   <h3 className="mt-2 font-serif text-2xl">{video.title}</h3>
                   {!canPlay ? (
-                    <p className="mt-1 text-sm text-stone">{video.description}</p>
+                    <p className="mt-1 text-sm text-charcoal">{video.description}</p>
                   ) : null}
                 </article>
               </FadeIn>

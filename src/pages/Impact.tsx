@@ -1,9 +1,8 @@
 import { FadeIn } from '@/components/animation/FadeIn'
-import { ParallaxImage } from '@/components/animation/ParallaxImage'
 import { Container } from '@/components/ui/Container'
 import { Meta } from '@/components/ui/Meta'
 import { PageHero } from '@/components/ui/PageHero'
-import { SmartImage } from '@/components/ui/SmartImage'
+import { PortraitFrame } from '@/components/ui/PortraitFrame'
 import { useImpact } from '@/hooks/useImpact'
 import { seo } from '@/data/site'
 
@@ -24,17 +23,17 @@ export default function Impact() {
           className={index % 2 === 0 ? 'bg-ivory' : 'bg-ivory-soft'}
         >
           <Container className="grid items-center gap-12 py-20 lg:grid-cols-12">
-            <ParallaxImage className="lg:col-span-7">
-              <SmartImage
-                src={section.image}
-                alt=""
-                className="aspect-[16/10] w-full object-cover"
-              />
-            </ParallaxImage>
-            <FadeIn className="lg:col-span-5">
+            <div className={index % 2 ? 'lg:col-span-5 lg:col-start-8' : 'lg:col-span-5'}>
+              <PortraitFrame src={section.image} alt="" focus="center 42%" />
+            </div>
+            <FadeIn
+              className={
+                index % 2 ? 'lg:col-span-6 lg:col-start-1 lg:row-start-1' : 'lg:col-span-6 lg:col-start-7'
+              }
+            >
               <p className="label text-gold">0{index + 1}</p>
               <h2 className="mt-4 font-serif text-4xl sm:text-5xl">{section.title}</h2>
-              <p className="mt-6 text-lg leading-relaxed text-stone">{section.body}</p>
+              <p className="mt-6 font-serif italic text-xl leading-relaxed text-charcoal">{section.body}</p>
             </FadeIn>
           </Container>
         </section>

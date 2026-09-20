@@ -1,4 +1,5 @@
 import { Layout } from '@/components/layout/Layout'
+import { PageTransition } from '@/components/animation/PageTransition'
 import About from '@/pages/About'
 import Contact from '@/pages/Contact'
 import Handloom from '@/pages/Handloom'
@@ -12,26 +13,33 @@ import Portfolio from '@/pages/Portfolio'
 import Privacy from '@/pages/Privacy'
 import Recognition from '@/pages/Recognition'
 import Terms from '@/pages/Terms'
-import { Route, Routes } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
+import { Route, Routes, useLocation } from 'react-router-dom'
 
 export default function App() {
+  const location = useLocation()
+
   return (
     <Layout>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/journey" element={<Journey />} />
-        <Route path="/impact" element={<Impact />} />
-        <Route path="/leadership" element={<Leadership />} />
-        <Route path="/handloom" element={<Handloom />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/media" element={<Media />} />
-        <Route path="/recognition" element={<Recognition />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/terms" element={<Terms />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <AnimatePresence mode="wait">
+        <PageTransition key={location.pathname}>
+          <Routes location={location}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/journey" element={<Journey />} />
+            <Route path="/impact" element={<Impact />} />
+            <Route path="/leadership" element={<Leadership />} />
+            <Route path="/handloom" element={<Handloom />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/media" element={<Media />} />
+            <Route path="/recognition" element={<Recognition />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </PageTransition>
+      </AnimatePresence>
     </Layout>
   )
 }

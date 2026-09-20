@@ -16,11 +16,11 @@ export function ImageReveal({
   return (
     <div className={cn('overflow-hidden', className)}>
       <motion.div
-        initial={reduce ? false : { scale: 1.08, opacity: 0 }}
+        initial={reduce ? false : { scale: 1.12, opacity: 0 }}
         whileInView={reduce ? undefined : { scale: 1, opacity: 1 }}
         viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 1.1, delay, ease: [0.22, 1, 0.36, 1] }}
-        className="h-full w-full"
+        transition={{ duration: 1.2, delay, ease: [0.22, 1, 0.36, 1] }}
+        className="h-full w-full origin-center"
       >
         {children}
       </motion.div>

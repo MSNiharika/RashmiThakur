@@ -25,7 +25,7 @@ export function Timeline({
               <div
                 className={`md:text-right ${index % 2 === 1 ? 'md:col-start-2 md:text-left' : ''}`}
               >
-                <p className="font-serif text-5xl text-gold/80 sm:text-6xl">
+                <p className="font-display text-5xl text-gold/80 sm:text-6xl">
                   {formatYear(item.year)}
                 </p>
               </div>
@@ -35,13 +35,13 @@ export function Timeline({
                 <p className="label text-gold">{item.kind}</p>
                 <h3 className="mt-2 font-serif text-3xl sm:text-4xl">{item.title}</h3>
                 {item.subtitle ? (
-                  <p className="mt-2 text-lg italic text-charcoal/80">{item.subtitle}</p>
+                  <p className="mt-2 text-lg italic text-charcoal">{item.subtitle}</p>
                 ) : null}
                 {item.location ? (
                   <p className="mt-1 text-sm tracking-wide text-stone">{item.location}</p>
                 ) : null}
                 {item.description ? (
-                  <p className="mt-4 max-w-md text-stone md:inline-block">{item.description}</p>
+                  <p className="mt-4 max-w-md text-charcoal md:inline-block">{item.description}</p>
                 ) : null}
               </div>
             </li>
